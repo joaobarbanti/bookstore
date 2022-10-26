@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
+import api from "../services/api";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,8 +32,8 @@ const AddBook = () => {
   };
 
   const sendRequest = async () => {
-    await axios
-      .post(process.env.REACT_APP_API_URL, {
+    await api
+      .post("books", {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),

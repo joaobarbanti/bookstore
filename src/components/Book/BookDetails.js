@@ -9,6 +9,7 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import api from "../../services/api";
 
 const BookDetails = () => {
   const [inputs, setInputs] = useState();
@@ -17,8 +18,8 @@ const BookDetails = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const fetchHandler = async () => {
-      await axios
-        .get(`http://localhost:3000/books/${id}`)
+      await api
+        .get(`/books/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.book));
     };
@@ -26,8 +27,8 @@ const BookDetails = () => {
   }, [id]);
 
   const sendRequest = async () => {
-    await axios
-      .put(`http://localhost:3000/books/${id}`, {
+    await api
+      .put(`/books/${id}`, {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),

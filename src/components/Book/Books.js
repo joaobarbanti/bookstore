@@ -3,9 +3,10 @@ import React, { useEffect, useState } from "react";
 import "./Book.css";
 import axios from "axios";
 import Book from "./Book";
+import api from "../../services/api";
 const URL = "http://localhost:3000/books";
 const fetchHandler = async () => {
-  return await axios.get(process.env.REACT_APP_API_URL).then((res) => res.data);
+  return await api.get("/books").then((res) => res.data);
 };
 const Books = () => {
   const [books, setBooks] = useState();
