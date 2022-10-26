@@ -32,7 +32,7 @@ const AddBook = () => {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:3000/books", {
+      .post(process.env.REACT_APP_API_URL, {
         name: String(inputs.name),
         author: String(inputs.author),
         description: String(inputs.description),
