@@ -1,10 +1,10 @@
 
 import React, { useEffect, useState } from "react";
 import "./Book.css";
-import axios from "axios";
+
 import Book from "./Book";
 import api from "../../services/api";
-const URL = "http://localhost:3000/books";
+
 const fetchHandler = async () => {
   return await api.get("/books").then((res) => res.data);
 };
