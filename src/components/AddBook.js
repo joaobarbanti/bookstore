@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     name: "",
     description: "",
@@ -45,7 +45,7 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs, checked);
-    sendRequest().then(() => history("/books"));
+    sendRequest().then(() => navigate("/books"));
   };
 
   return (

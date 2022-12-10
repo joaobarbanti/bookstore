@@ -11,7 +11,6 @@ const Book = (props) => {
       .delete(`/books/${_id}`)
       .then((res) => res.data)
       .then(() => navigate("/"))
-      .then(() => navigate("/books"))
   };
   return (
     <div className="card">
