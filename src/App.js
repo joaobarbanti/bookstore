@@ -8,19 +8,17 @@ import Books from "./components/Book/Books";
 import BookDetails from "./components/Book/BookDetails";
 function App() {
   return (
-    <React.Fragment>
-      <header>
-        <Header />
-      </header>
+  
+  
       <main>
         <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="/add" element={<AddBook />} exact />
+<Route path="/" element={<Home />} exact />  
+          <Route path="/" element={<AddBook />} exact />
           <Route path="/books" element={<Books />} exact />
           <Route path="/books/:id" element={<BookDetails />} exact />
         </Routes>
       </main>
-    </React.Fragment>
+
   );
 }
 

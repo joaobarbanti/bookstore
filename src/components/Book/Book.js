@@ -1,15 +1,17 @@
 
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import "./Book.css";
 const Book = (props) => {
+  const navigate = useNavigate()
   const { _id, name, author, description, price, image } = props.book;
   const deleteHandler = async () => {
     await api
       .delete(`/books/${_id}`)
       .then((res) => res.data)
-      .then(() => window.location.reload())
+      .then(() => navigate("/"))
+      .then(() => navigate("/books"))
   };
   return (
     <div className="card">
