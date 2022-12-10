@@ -4,8 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import AddBook from "./components/AddBook";
 import Books from "./components/Book/Books";
-import About from "./components/About";
-import BookDetail from "./components/Book/BookDetail";
+import BookDetails from "./components/Book/BookDetails";
 function App() {
   return (
     <React.Fragment>
@@ -14,11 +13,10 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="/add" element={<AddBook />} exact />
-          <Route path="/books" element={<Books />} exact />
-          <Route path="/about" element={<About />} exact />
-          <Route path="/books/:id" element={<BookDetail />} exact />
+          <Route path="/" element={<Home />}  />
+          <Route path="/add" element={<AddBook />} />
+          <Route path="/books" element={<Books />}  />
+          <Route path="/books/:id" element={<BookDetails />}  />
         </Routes>
       </main>
     </React.Fragment>
